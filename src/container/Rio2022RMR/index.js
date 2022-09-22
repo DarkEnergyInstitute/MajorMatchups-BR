@@ -10,51 +10,14 @@ import { BasicUI } from '../../libs/common/BasicUI';
 import {SwissBuchholtzDup} from "../../libs/common/formats/SwissBuchholtzDup";
 import {Knockout} from "../../libs/common/formats/Knockout";
 import sponsorLogo from '../../images/sponsor/rio_sb.svg';
+import headerPt from '../../images/sponsor/header-pt.png';
+import footerPt from "../../images/sponsor/footer-pt.png";
 
 
 const Regions = [
   {
     id: 0,
-    name: "Europe B",
-    seeds: EUB,
-    seats: [
-      { status: "legends", until: 3, abbrev: "L", statusPositioned: true },
-      { status: "challengers", until: 7, abbrev: "C", statusPositioned: true },
-      { status: "contenders", until: 8, abbrev: "Co", statusPositioned: true },
-      { status: "eliminated", until: 16, abbrev: "E", statusPositioned: true },
-    ],
-    tiebreakers: {
-      "5": [{teams: 3, id: "3/4", name: "3/4th Decider"}],
-    },
-    rounds: 6,
-    winsToAdvance: 3,
-    nonDeciderBestOf: 1,
-    deciderBestOf: 2,
-    tournamentFormat: "SWISS_BUCHHOLTZ",
-    allowDups: false,
-  },
-  {
-    id: 1,
-    name: "Europe A",
-    seeds: EUA,
-    seats: [
-      { status: "legends", until: 4, abbrev: "L", statusPositioned: true },
-      { status: "challengers", until: 6, abbrev: "C", statusPositioned: true },
-      { status: "contenders", until: 8, abbrev: "Co", statusPositioned: true },
-      { status: "eliminated", until: 16, abbrev: "E", statusPositioned: true },
-    ],
-    tiebreakers: {
-      "5": [{teams: 4, id: "4/5", name: "4/5th Decider (Legend)"}],
-    },
-    rounds: 6,
-    winsToAdvance: 3,
-    nonDeciderBestOf: 1,
-    deciderBestOf: 2,
-    tournamentFormat: "SWISS_BUCHHOLTZ",
-    allowDups: false,
-  },
-  {
-    id: 2,
+    order: 0,
     name: "Americas",
     seeds: AME,
     seats: [
@@ -77,7 +40,50 @@ const Regions = [
     allowDups: false,
   },
   {
+    id: 1,
+    order: 1,
+    name: "EU A",
+    seeds: EUA,
+    seats: [
+      { status: "legends", until: 4, abbrev: "L", statusPositioned: true },
+      { status: "challengers", until: 6, abbrev: "C", statusPositioned: true },
+      { status: "contenders", until: 8, abbrev: "Co", statusPositioned: true },
+      { status: "eliminated", until: 16, abbrev: "E", statusPositioned: true },
+    ],
+    tiebreakers: {
+      "5": [{teams: 4, id: "4/5", name: "4/5th Decider (Legend)"}],
+    },
+    rounds: 6,
+    winsToAdvance: 3,
+    nonDeciderBestOf: 1,
+    deciderBestOf: 2,
+    tournamentFormat: "SWISS_BUCHHOLTZ",
+    allowDups: false,
+  },
+  {
+    id: 2,
+    order: 2,
+    name: "EU B",
+    seeds: EUB,
+    seats: [
+      { status: "legends", until: 3, abbrev: "L", statusPositioned: true },
+      { status: "challengers", until: 7, abbrev: "C", statusPositioned: true },
+      { status: "contenders", until: 8, abbrev: "Co", statusPositioned: true },
+      { status: "eliminated", until: 16, abbrev: "E", statusPositioned: true },
+    ],
+    tiebreakers: {
+      "5": [{teams: 3, id: "3/4", name: "3/4th Decider"}],
+    },
+    rounds: 6,
+    winsToAdvance: 3,
+    nonDeciderBestOf: 1,
+    deciderBestOf: 2,
+    tournamentFormat: "SWISS_BUCHHOLTZ",
+    allowDups: false,
+  },
+  {
     id: 3,
+    order: 4,
     name: "Asia-Pacific",
     seeds: AP,
     seats: [
@@ -184,29 +190,15 @@ export default class Rio2022RMR extends React.PureComponent {
     return (
       <div className="outer">
         <div className="page-container">
-          <div className="title-container">
-            <h1 className="title">IEM Rio RMR 2022 Matchup Calculator</h1>
-            <p style={{ fontSize: 18, marginTop: -16 }}>
-              Sponsored by <a href="https://sportsbet.io"><img src={sponsorLogo} alt="Sportsbet.io" style={{ maxHeight: 20, marginLeft: 10 }}/></a>
-            </p>
+          <div className="title-container sponsored">
+            <a href="https://sportsbet.io">
+              <img src={headerPt} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 220 }}/>
+            </a>
           </div>
-          <p>
-            <a href="https://discord.gg/KYNbRYrZGe">
-              feedback(discord)
-            </a>
-            <span style={{ margin: 10 }}>·</span>
-            <a href="https://twitter.com/CyberHono">
-              twitter
-            </a>
-            <span style={{ margin: 10 }}>·</span>
-            <a href="https://steamcommunity.com/id/iebbbb">
-              steam profile
-            </a>
-          </p>
           <div style={{ marginTop: 20 }}>
             <Menu pointing secondary inverted compact size="huge" style={{ border: 'none' }}>
               {
-                Regions.map(region => (
+                Regions.sort((x, y) => x.order - y.order).map(region => (
                   <Menu.Item
                     key={region.id}
                     name={region.name}
@@ -219,7 +211,20 @@ export default class Rio2022RMR extends React.PureComponent {
             <BasicUI state={this.state} stage={this.getStage()} shuffle={this.shuffle} />
           </div>
           <p style={{ fontSize: 18, marginTop: 36 }}>
-            Sponsored by <a href="https://sportsbet.io"><img src={sponsorLogo} alt="Sportsbet.io" style={{ maxHeight: 20, marginLeft: 10 }}/></a>
+            <a href="https://discord.gg/KYNbRYrZGe">
+              feedback(discord)
+            </a>
+            <span style={{ margin: 10 }}>·</span>
+            <a href="https://twitter.com/CyberHono">
+              twitter
+            </a>
+            <span style={{ margin: 10 }}>·</span>
+            <a href="https://steamcommunity.com/id/iebbbb">
+              steam profile
+            </a>
+          </p>
+          <p style={{ fontSize: 18, marginTop: 36 }}>
+            Sponsored by <a href="https://sportsbet.io"><img src={sponsorLogo} alt="Sportsbet.io" style={{ maxHeight: 32, marginLeft: 10 }}/></a>
           </p>
         </div>
       </div>

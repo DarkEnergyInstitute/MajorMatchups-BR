@@ -32,8 +32,8 @@ export const getMatchupDisplay = (state, stage) => {
           <Table basic='very' celled inverted>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Opponent</Table.HeaderCell>
-                <Table.HeaderCell>Score</Table.HeaderCell>
+                <Table.HeaderCell>Oponente</Table.HeaderCell>
+                <Table.HeaderCell>Pontuação</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
@@ -54,7 +54,7 @@ export const getMatchupDisplay = (state, stage) => {
                 )
               }
               <Table.Row>
-                <Table.Cell><b>Total Buchholtz</b></Table.Cell>
+                <Table.Cell><b>Buchholtz Total</b></Table.Cell>
                 <Table.Cell>{team.buchholz}</Table.Cell>
               </Table.Row>
             </Table.Body>
