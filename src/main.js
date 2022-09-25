@@ -10,6 +10,7 @@ import Routes from './router';
 import './main.css';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import KofiButton from "kofi-button";
+import betweenRoundsPt from "./images/sponsor/between-rounds-pt.png";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -48,26 +49,35 @@ class DesktopContainer extends Component {
     const { fixed } = this.state;
 
     return (
-      <Media greaterThan="mobile">
-        <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign="center" vertical>
-            <Menu fixed={fixed ? 'top' : null} inverted pointing={!fixed} secondary={!fixed} size="large">
-              <Container>
-                <Menu.Item header style={{ fontSize: "150%", padding: 5, paddingRight: 20, fontFamily: 'Inter', fontWeight: 600 }}>
-                  MajorS.im <sub style={{ color: '#33ff33', margin: 3 }}>BR</sub>
-                </Menu.Item>
-                {Editions.map((edition) => (
-                  <NavLink as="a" className="item" key={edition[1]} to={edition[1]}>
-                    {edition[0]}
-                  </NavLink>
-                ))}
-              </Container>
-            </Menu>
-          </Segment>
-        </Visibility>
-        {children}
-        <Footer />
-      </Media>
+      <div>
+        <div className="bottom-mobile">
+          <div style={{ margin: "0 auto" }}>
+            <a href="https://sportsbet.io">
+              <img src={betweenRoundsPt} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 110 }}/>
+            </a>
+          </div>
+        </div>
+        <Media greaterThan="mobile">
+          <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
+            <Segment inverted textAlign="center" vertical>
+              <Menu fixed={fixed ? 'top' : null} inverted pointing={!fixed} secondary={!fixed} size="large">
+                <Container>
+                  <Menu.Item header style={{ fontSize: "150%", padding: 5, paddingRight: 20, fontFamily: 'Inter', fontWeight: 600 }}>
+                    MajorS.im <sub style={{ color: '#33ff33', margin: 3 }}>BR</sub>
+                  </Menu.Item>
+                  {Editions.map((edition) => (
+                    <NavLink as="a" className="item" key={edition[1]} to={edition[1]}>
+                      {edition[0]}
+                    </NavLink>
+                  ))}
+                </Container>
+              </Menu>
+            </Segment>
+          </Visibility>
+          {children}
+          <Footer />
+        </Media>
+      </div>
     );
   }
 }

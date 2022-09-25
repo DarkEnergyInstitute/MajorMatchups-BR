@@ -11,7 +11,7 @@ import {SwissBuchholtzDup} from "../../libs/common/formats/SwissBuchholtzDup";
 import {Knockout} from "../../libs/common/formats/Knockout";
 import sponsorLogo from '../../images/sponsor/rio_sb.svg';
 import headerPt from '../../images/sponsor/header-pt.png';
-import footerPt from "../../images/sponsor/footer-pt.png";
+import betweenRoundsPt from "../../images/sponsor/between-rounds-pt.png";
 
 
 const Regions = [
@@ -208,7 +208,20 @@ export default class Rio2022RMR extends React.PureComponent {
                 ))
               }
             </Menu>
-            <BasicUI state={this.state} stage={this.getStage()} shuffle={this.shuffle} />
+            <BasicUI
+              state={this.state}
+              stage={this.getStage()}
+              shuffle={this.shuffle}
+              inter={
+                <div className="mid-mobile">
+                  <div style={{ margin: "30px auto" }}>
+                    <a href="https://sportsbet.io">
+                      <img src={betweenRoundsPt} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 155 }}/>
+                    </a>
+                  </div>
+                </div>
+              }
+            />
           </div>
           <p style={{ fontSize: 18, marginTop: 36 }}>
             <a href="https://discord.gg/KYNbRYrZGe">

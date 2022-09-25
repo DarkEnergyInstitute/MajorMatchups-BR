@@ -1,9 +1,7 @@
 import {Button, Form, Label, Radio} from 'semantic-ui-react';
-import { getMatchupDisplay } from './Display';
+import {getMatchupDisplay} from './Display';
 import GraphBuilder from '../../graphics/GraphBuilder';
 import React from 'react';
-import headerPt from "../../images/sponsor/header-pt.png";
-import betweenRoundsPt from "../../images/sponsor/between-rounds-pt.png";
 
 export class BasicUI extends React.Component {
 
@@ -46,13 +44,13 @@ export class BasicUI extends React.Component {
 
   render() {
     const { matchOnly, interactiveMode, iRound, hideMatchUI, hideVisualizationUI } = this.state;
-    const { state, shuffle, advance } = this.props;
+    const { state, shuffle, advance, inter } = this.props;
     const rounds = Array.from(Array(state.rounds + 1).keys());
 
     return (
       <div style={{ marginTop: 20 }}>
         {
-          false && (
+          (
             <Form style={{ marginTop: 20 }} inverted>
               <Form.Field>
                 {
@@ -200,13 +198,7 @@ export class BasicUI extends React.Component {
             </div>
           )
         }
-
-        <div style={{ marginTop: 30, marginBottom: 30 }}>
-          <a href="https://sportsbet.io">
-            <img src={betweenRoundsPt} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 220 }}/>
-          </a>
-        </div>
-
+        {inter}
         {
           (!interactiveMode || iRound >= (state.rounds)) && (
             <>
