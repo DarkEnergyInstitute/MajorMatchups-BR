@@ -7,6 +7,10 @@ body {
   font-weight: 400;
 }
 
+h1, h2, h3, h4, h5, .ui.button {
+  font-family: Inter, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
 
 @media only screen and (max-width: 768px) {
   .bottom-mobile {

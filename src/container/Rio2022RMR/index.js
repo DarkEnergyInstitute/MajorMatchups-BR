@@ -11,8 +11,7 @@ import {SwissBuchholtzDup} from "../../libs/common/formats/SwissBuchholtzDup";
 import {Knockout} from "../../libs/common/formats/Knockout";
 import sponsorLogo from '../../images/sponsor/rio_sb.svg';
 import headerPt from '../../images/sponsor/header-pt.png';
-import betweenRoundsPt from "../../images/sponsor/between-rounds-pt.png";
-
+import betweenRoundsPt from "../../images/sponsor/win-win-1726x462.png";
 
 const Regions = [
   {
