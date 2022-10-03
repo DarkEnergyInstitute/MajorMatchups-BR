@@ -214,32 +214,10 @@ export default class Rio2022RMR extends React.PureComponent {
               stage={this.getStage()}
               shuffle={this.shuffle}
               inter={
-                <div className="mid-mobile">
-                  <div style={{ margin: "30px auto" }}>
-                    <a href={redirectLink}>
-                      <img src={betweenRoundsPt} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 155 }}/>
-                    </a>
-                  </div>
-                </div>
+                <div />
               }
             />
           </div>
-          <p style={{ fontSize: 18, marginTop: 36 }}>
-            <a href="https://discord.gg/KYNbRYrZGe">
-              feedback(discord)
-            </a>
-            <span style={{ margin: 10 }}>·</span>
-            <a href="https://twitter.com/CyberHono">
-              twitter
-            </a>
-            <span style={{ margin: 10 }}>·</span>
-            <a href="https://steamcommunity.com/id/iebbbb">
-              steam profile
-            </a>
-          </p>
-          <p style={{ fontSize: 18, marginTop: 36 }}>
-            Sponsored by <a href="https://sportsbet.io"><img src={sponsorLogo} alt="Sportsbet.io" style={{ maxHeight: 32, marginLeft: 10 }}/></a>
-          </p>
         </div>
       </div>
     );
