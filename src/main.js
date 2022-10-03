@@ -84,6 +84,7 @@ class DesktopContainer extends Component {
             </Segment>
           </Visibility>
           {children}
+          <div style={{ padding: 80 }} />
         </Media>
         <div className="bottom-desktop">
           <div style={{ margin: "0 auto", flexDirection: "row", width: "100%", flexWrap: "nowrap", display: "flex" }}>
