@@ -103,6 +103,8 @@ const Regions = [
 
 const teamLogo = (code) => `https://major.ieb.im/images/rio2022_rmr/${code}.png`;
 
+const redirectLink = "https://cutt.ly/DV3TjD7";
+
 export default class Rio2022RMR extends React.PureComponent {
   state = {
     teams: [[], false, false, false, false, false],
@@ -190,7 +192,7 @@ export default class Rio2022RMR extends React.PureComponent {
       <div className="outer">
         <div className="page-container">
           <div className="title-container sponsored">
-            <a href="https://sportsbet.io">
+            <a href={redirectLink}>
               <img src={headerPt} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 220 }}/>
             </a>
           </div>
@@ -214,7 +216,7 @@ export default class Rio2022RMR extends React.PureComponent {
               inter={
                 <div className="mid-mobile">
                   <div style={{ margin: "30px auto" }}>
-                    <a href="https://sportsbet.io">
+                    <a href={redirectLink}>
                       <img src={betweenRoundsPt} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 155 }}/>
                     </a>
                   </div>
