@@ -1,18 +1,16 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable react/no-multi-comp */
 
-import { createMedia } from '@artsy/fresnel';
+import {createMedia} from '@artsy/fresnel';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Container, Icon, Menu, Segment, Sidebar, Visibility } from 'semantic-ui-react';
+import React, {Component} from 'react';
+import {Container, Icon, Menu, Segment, Sidebar, Visibility} from 'semantic-ui-react';
 import Routes from './router';
 
 import './main.css';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
-import KofiButton from "kofi-button";
+import {BrowserRouter as Router, NavLink} from 'react-router-dom';
 import advertisement1 from "./images/sponsor/win-win-1726x462.png";
 import advertisement2 from "./images/sponsor/between-rounds-pt.png";
-import sponsorLogo from "./images/sponsor/rio_sb.svg";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -50,7 +48,9 @@ const Editions = [
   ['19 Katowice', '/19katowice'],
 ];
 
-const redirectLink = "https://cutt.ly/DV3TjD7";
+// const redirectLink = "https://cutt.ly/DV3TjD7";
+
+const redirectLink = "https://cutt.ly/eBejmLo";
 
 
 
@@ -89,7 +89,7 @@ class DesktopContainer extends Component {
         <div className="bottom-desktop">
           <div style={{ margin: "0 auto", flexDirection: "row", width: "100%", flexWrap: "nowrap", display: "flex" }}>
             <a href={redirectLink} className="ads-img">
-              <img src={advertisement1} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
+              <img src={advertisement2} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
             </a>
             <div style={{ flex: 1 }}>
               <Footer />
@@ -159,7 +159,7 @@ class MobileContainer extends Component {
         <div className="bottom-mobile">
           <div style={{ margin: "0 auto", flexDirection: "row", width: "100%", flexWrap: "nowrap", display: "flex" }}>
             <a href={redirectLink} style={{ flex: 1, display: "inline-block" }}>
-              <img src={advertisement1} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
+              <img src={advertisement2} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
             </a>
           </div>
         </div>
