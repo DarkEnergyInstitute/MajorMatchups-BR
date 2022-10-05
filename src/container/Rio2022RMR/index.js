@@ -1,17 +1,15 @@
 /* eslint-disable global-require */
 
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
-import { AME, AP, EUA, EUB } from './initial_data';
-import { Scores } from './scores';
-import { SwissBuchholtz } from '../../libs/common/formats/SwissBuchholtz';
-import { pack, setTiebreakerWinner, setWinner, shuffle } from '../../libs/common/common';
-import { BasicUI } from '../../libs/common/BasicUI';
+import {Menu} from 'semantic-ui-react';
+import {AME, AP, EUA, EUB} from './initial_data';
+import {Scores} from './scores';
+import {SwissBuchholtz} from '../../libs/common/formats/SwissBuchholtz';
+import {pack, setTiebreakerWinner, setWinner, shuffle} from '../../libs/common/common';
+import {BasicUI} from '../../libs/common/BasicUI';
 import {SwissBuchholtzDup} from "../../libs/common/formats/SwissBuchholtzDup";
 import {Knockout} from "../../libs/common/formats/Knockout";
-import sponsorLogo from '../../images/sponsor/rio_sb.svg';
 import headerPt from '../../images/sponsor/header-pt.png';
-import betweenRoundsPt from "../../images/sponsor/win-win-1726x462.png";
 
 const Regions = [
   {
@@ -150,12 +148,12 @@ export default class Rio2022RMR extends React.PureComponent {
       regionId: region,
       ...Regions[region],
     }, () => this.calculateMatchups(0, this.state.rounds + 1));
-/*
-    return fetch('https://score-service.deta.dev/fetch_results/ant21rmr')
+
+    return fetch('https://score-service.deta.dev/fetch_results/rio22rmr')
       .then((resp) => resp.json())
       .then((resp) => {
         this.setState({
-          ...this.pack(Regions[region].seeds),
+          ...pack(Regions[region].seeds, teamLogo),
           scores: resp,
           advanceMode: 1,
           regionId: region,
@@ -164,7 +162,6 @@ export default class Rio2022RMR extends React.PureComponent {
       }).then(
         () => this.calculateMatchups(0, this.state.rounds + 1)
       );
- */
   };
 
 
