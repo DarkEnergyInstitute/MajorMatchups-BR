@@ -9,7 +9,6 @@ import Routes from './router';
 
 import './main.css';
 import {BrowserRouter as Router, NavLink} from 'react-router-dom';
-import advertisement1 from "./images/sponsor/win-win-1726x462.png";
 import advertisement2 from "./images/sponsor/between-rounds-pt.png";
 
 const { MediaContextProvider, Media } = createMedia({
