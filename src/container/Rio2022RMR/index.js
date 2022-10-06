@@ -48,7 +48,7 @@ const Regions = [
       { status: "eliminated", until: 16, abbrev: "E", statusPositioned: true },
     ],
     tiebreakers: {
-      "5": [{teams: 4, id: "4/5", name: "4/5th Decider (Legend)"}],
+      "5": [{teams: 4, id: "4/5", name: "5th Decider (Legend)"}],
     },
     rounds: 6,
     winsToAdvance: 3,
@@ -69,9 +69,10 @@ const Regions = [
       { status: "eliminated", until: 16, abbrev: "E", statusPositioned: true },
     ],
     tiebreakers: {
-      "5": [{teams: 3, id: "3/4", name: "3/4th Decider"}],
+      "5": [{teams: 4, id: "4/5", name: "5th Decider"}],
+      "6": [{teams: 3, id: "3/4", name: "3rd/4th Decider"}],
     },
-    rounds: 6,
+    rounds: 7,
     winsToAdvance: 3,
     nonDeciderBestOf: 1,
     deciderBestOf: 2,
