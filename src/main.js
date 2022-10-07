@@ -9,7 +9,7 @@ import Routes from './router';
 
 import './main.css';
 import {BrowserRouter as Router, NavLink} from 'react-router-dom';
-import advertisement2 from "./images/sponsor/between-rounds-pt.png";
+import advertisement3 from "./images/sponsor/br-banner3.png";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -47,9 +47,7 @@ const Editions = [
   ['19 Katowice', '/19katowice'],
 ];
 
-// const redirectLink = "https://cutt.ly/DV3TjD7";
-
-const redirectLink = "https://cutt.ly/eBejmLo";
+const redirectLink = "https://cutt.ly/5Bikcss";
 
 
 
@@ -88,13 +86,13 @@ class DesktopContainer extends Component {
         <div className="bottom-desktop">
           <div style={{ margin: "0 auto", flexDirection: "row", width: "100%", flexWrap: "nowrap", display: "flex" }}>
             <a href={redirectLink} className="ads-img">
-              <img src={advertisement2} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
+              <img src={advertisement3} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
             </a>
             <div style={{ flex: 1 }}>
               <Footer />
             </div>
             <a href={redirectLink} className="alt-ads ads-img">
-              <img src={advertisement2} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
+              <img src={advertisement3} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
             </a>
           </div>
         </div>
@@ -158,7 +156,7 @@ class MobileContainer extends Component {
         <div className="bottom-mobile">
           <div style={{ margin: "0 auto", flexDirection: "row", width: "100%", flexWrap: "nowrap", display: "flex" }}>
             <a href={redirectLink} style={{ flex: 1, display: "inline-block" }}>
-              <img src={advertisement2} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
+              <img src={advertisement3} alt="Sportsbet.io" style={{ maxWidth: "100%", maxHeight: 150 }}/>
             </a>
           </div>
         </div>
